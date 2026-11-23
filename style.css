@@ -293,6 +293,11 @@ section.about p:last-child {
   border-left-color: #c7c7c1;
 }
 
+.journey-info-card.is-selected {
+  border-left-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, var(--bg));
+}
+
 .journey-info-card strong {
   font-size: 0.9rem;
 }
@@ -339,6 +344,12 @@ section.about p:last-child {
 .read-body {
   stroke: var(--bg);
   stroke-width: 1;
+}
+
+.read.is-selected .read-body {
+  stroke: var(--accent);
+  stroke-width: 4;
+  paint-order: stroke fill;
 }
 
 .read-clip {
@@ -415,7 +426,7 @@ section.about p:last-child {
 
 .pub-entry {
   display: grid;
-  grid-template-columns: 3.5rem 1fr;
+  grid-template-columns: 5.5rem 1fr;
   gap: 0.25rem 1rem;
 }
 
@@ -471,17 +482,27 @@ footer {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  padding: 0;
   font: inherit;
-  font-size: 1.25rem;
+  font-size: 1.75rem;
   line-height: 1;
   color: var(--muted);
-  background: var(--bg);
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  width: 2.5rem;
-  height: 2.5rem;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  width: 2rem;
+  height: 2rem;
   cursor: pointer;
-  box-shadow: 0 0.2rem 0.6rem rgb(28 28 26 / 8%);
+  box-shadow: none;
+}
+
+.theme-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  line-height: 1;
 }
 
 .theme-toggle:hover,
@@ -614,6 +635,17 @@ footer {
 body.game-mode,
 body.game-mode * {
   cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='12' fill='%23000000' stroke='%23333333' stroke-width='2'/%3E%3Cg fill='none' stroke='%23d94b55' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M20 8V3M20 3l-3-3M20 3l3-3'/%3E%3Cg transform='rotate(45 20 20)'%3E%3Cpath d='M20 8V3M20 3l-3-3M20 3l3-3'/%3E%3C/g%3E%3Cg transform='rotate(90 20 20)'%3E%3Cpath d='M20 8V3M20 3l-3-3M20 3l3-3'/%3E%3C/g%3E%3Cg transform='rotate(135 20 20)'%3E%3Cpath d='M20 8V3M20 3l-3-3M20 3l3-3'/%3E%3C/g%3E%3Cg transform='rotate(180 20 20)'%3E%3Cpath d='M20 8V3M20 3l-3-3M20 3l3-3'/%3E%3C/g%3E%3Cg transform='rotate(225 20 20)'%3E%3Cpath d='M20 8V3M20 3l-3-3M20 3l3-3'/%3E%3C/g%3E%3Cg transform='rotate(270 20 20)'%3E%3Cpath d='M20 8V3M20 3l-3-3M20 3l3-3'/%3E%3C/g%3E%3Cg transform='rotate(315 20 20)'%3E%3Cpath d='M20 8V3M20 3l-3-3M20 3l3-3'/%3E%3C/g%3E%3C/g%3E%3Ccircle cx='16' cy='16' r='2' fill='%23555555'/%3E%3Ccircle cx='24' cy='24' r='2' fill='%23555555'/%3E%3C/svg%3E") 20 20, crosshair;
+}
+
+@media (pointer: coarse) {
+  body.game-mode,
+  body.game-mode * {
+    cursor: auto;
+  }
+
+  body.game-mode {
+    touch-action: manipulation;
+  }
 }
 
 
