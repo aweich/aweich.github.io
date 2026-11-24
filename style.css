@@ -483,26 +483,25 @@ footer {
   align-items: center;
   justify-content: center;
   padding: 0;
-  font: inherit;
-  font-size: 1.75rem;
-  line-height: 1;
-  color: var(--muted);
   background: transparent;
   border: 0;
   border-radius: 0;
-  width: 2rem;
-  height: 2rem;
+  width: 2.25rem;
+  height: 2.25rem;
   cursor: pointer;
   box-shadow: none;
 }
 
 .theme-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  line-height: 1;
+  display: block;
+  width: 1.05rem;
+  height: 1.05rem;
+  border-radius: 50%;
+  background: #1c1c1a;
+}
+
+body.night-mode .theme-icon {
+  background: #e7e5dc;
 }
 
 .theme-toggle:hover,
@@ -544,6 +543,83 @@ footer {
 @media (max-width: 1200px) {
   .game-hud {
     right: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+
+  main {
+    max-width: 100%;
+    padding: 3.5rem 1.25rem 4rem;
+  }
+
+  header {
+    margin-bottom: 2.25rem;
+  }
+
+  h1 {
+    font-size: 1.55rem;
+  }
+
+  .tagline {
+    max-width: 34ch;
+  }
+
+  nav.contact-links ul {
+    gap: 0.4rem 1.25rem;
+  }
+
+  .section-nav {
+    gap: 0.75rem 1.25rem;
+    margin-bottom: 2.25rem;
+  }
+
+  section {
+    margin-bottom: 2.25rem;
+  }
+
+  section.about {
+    text-align: left;
+  }
+
+  section.about p {
+    line-height: 1.65;
+  }
+
+  .journey-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100%;
+    margin-inline: 0;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .journey-scroll .reads-svg {
+    min-width: 700px;
+  }
+
+  .journey-filters,
+  .tag-filter {
+    gap: 0.45rem;
+  }
+
+  .journey-filter,
+  .tag-btn,
+  .tag-chip {
+    min-height: 44px;
+  }
+
+  .pub-entry {
+    grid-template-columns: 4.5rem 1fr;
+  }
+
+  .theme-toggle {
+    top: 0.75rem;
+    right: 0.75rem;
   }
 }
 
@@ -688,6 +764,42 @@ a {
 @media (max-width: 480px) {
   main {
     padding: 2.5rem 1.25rem 3.5rem;
+  }
+
+  header {
+    padding-top: 1.25rem;
+  }
+
+  h1 {
+    font-size: 1.45rem;
+  }
+
+  .title,
+  .institution,
+  .tagline {
+    font-size: 0.9rem;
+  }
+
+  nav.contact-links {
+    margin-top: 0.75rem;
+  }
+
+  nav.contact-links ul {
+    gap: 0.25rem 1rem;
+  }
+
+  .section-nav {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: center;
+  }
+
+  .section-nav-button {
+    min-height: 44px;
+  }
+
+  .journey-scroll .reads-svg {
+    min-width: 680px;
   }
 
   .pub-entry {
